@@ -84,14 +84,7 @@ cd ../SDPR/; sbatch --array=1-10 SDPR.sh
 
 **<a name="real-geno"></a>1. Obtaining Genotype data**
 
-```
-
-```
-
 **<a name="real-ref"></a>2. Constructing the reference LD matrix**
-
-```
-```
 
 **<a name="real-ss"></a>3. Obtaining and cleaning the summary statistics**
 
