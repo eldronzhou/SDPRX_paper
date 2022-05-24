@@ -40,13 +40,13 @@ cd result/EUR_EAS/Scene1
 # PRS-CS
 cd PRS_CS/; sbatch --array=1-22 PRS_CS.sh
 # after all jobs finish
-Rscript cv.R 
+sbatach PRS_CS_res.sh
 
 # LDpred2
 cd ldpred2/; sbatch --array=1-10 ldpred.sh
 
 # SDPRX
-cd SDPR/; sbatch --array=1-10 SDPR.sh
+cd SDPRX/; sbatch --array=1-10 SDPRX.sh
 
 # XPASS
 ```
