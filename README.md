@@ -1,12 +1,10 @@
 # SDPRX_paper
-We are not able to release data used in the analysis because of the restricted access to the UK Biobank genotype and phenotype data. However, if you have access to UK Biobank, you can follow the instructions to reproduce the results in our paper. The path to the software and datasets in these scripts may not be correct. We use slurm to schedule jobs to HPC, and you need to change the header if you use another system. If you have issues about these scripts, please report to the [issue](https://github.com/eldronzhou/SDPRX_paper/issues) page.
+We are not able to release data used in the analysis because of the restricted access to the UK Biobank genotype and phenotype data. However, if you have access to UK Biobank, you can follow the instructions to get the results of this paper. The path to the software and datasets in these scripts may not be correct. We use slurm to schedule jobs to HPC, and you need to change the header if you use another system. If you have issues about these scripts, please report to the [issue](https://github.com/eldronzhou/SDPRX_paper/issues) page.
 
 # Table of Contents
 - [Simulations](#sim)
   - [Requirements](#sim-req)
   - [Obtaining genotype data](#sim-geno)
-  - [Simulating phenotype and generating summary statistics](#sim-ss)
-  - [Constructing the reference LD matrix](#sim-ref)
   - [Running the analysis](#sim-analysis)
 - [Real data applications](#real)
   - [Requirements](#real-req)
@@ -30,45 +28,27 @@ We are not able to release data used in the analysis because of the restricted a
 ## Workflow
 **<a name="sim-geno"></a>1. Obtaining Genotype data**
 
+You can download the effect sizes, genotype, phenotype, and summary statistics used in this simulation from [this link](https://drive.google.com/drive/folders/1MjLUdIxfneM3-Oh-5LX-AG9MzQ3PkrHL?usp=sharing).
 
-**<a name="sim-ss"></a>2. Simulating phenotype and generating summary statistics**
-
-Next run the simulation script to generate summary statistics. You need to change to the directory of `UKB_simulate/` to submit the script.
-```
-# for Scene1A
-sbatch GCTA_sim.sh
-```
-
-**<a name="sim-ref"></a>3. Constructing the reference LD matrix**
-
-```
-# download reference of PRS_CS
-cd ref/PRS_CS; sh get_ref.sh 
-
-# download reference of SDPR
-cd ../SDPR; sh get_ref.sh 
-```
-
-**<a name="sim-analysis"></a>4. Running the analysis**
+**<a name="sim-analysis"></a>2. Running the analysis**
 
 We will use Scene1 as the example for demonstration. You can repeat the same procedure for other Scenes.
 
 ```
-cd result/Scene1A/h2_0.5/10K/
-
-# SBayesR
-cd gctb/; sbatch --array=1-10 gctb.sh
+cd result/EUR_EAS/Scene1
 
 # PRS-CS
-cd ../PRS_CS/; sbatch --array=1-22 PRS_CS.sh
+cd PRS_CS/; sbatch --array=1-22 PRS_CS.sh
 # after all jobs finish
-sbatch --array=1-10 PRS_CS_res.sh
+Rscript cv.R 
 
 # LDpred2
-cd ../ldpred/; sbatch --array=1-10 ldpred.sh
+cd ldpred2/; sbatch --array=1-10 ldpred.sh
 
 # SDPRX
-cd ../SDPR/; sbatch --array=1-10 SDPR.sh
+cd SDPR/; sbatch --array=1-10 SDPR.sh
+
+# XPASS
 ```
 
 # <a name="real"></a>Real data applications
