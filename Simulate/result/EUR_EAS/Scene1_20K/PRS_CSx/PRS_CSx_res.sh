@@ -7,7 +7,6 @@
 
 i=${SLURM_ARRAY_TASK_ID}
 j=Scene1
-k=50K
 
 cat sim_${i}_EUR*.txt > sim_${i}_EUR.txt
 cat 1e-6/sim_${i}_EUR*.txt > 1e-6/sim_${i}_EUR.txt

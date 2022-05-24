@@ -6,13 +6,12 @@ j = args[1] # repeat
 h2 = args[2] # h2
 k = args[3] # scene
 
-pops = c("EUR","EAS")
+pops = c("EAS")
 
 for (pop in pops) {
 
 pheno = read.table(paste0("../../../../phenotype/EUR_EAS/",k,"/",pop,"/validate/sim_",j,".phen"), header=F)
 
-#file = list.files(path=paste0("sim_",j), pattern="*.txt$", full.names=T)
 file = paste0(c("sim_","1e-6/sim_","1e-4/sim_","1e-2/sim_","1/sim_"), j, "_",pop,".txt")
 r2 = rep(0, length(file))
 
