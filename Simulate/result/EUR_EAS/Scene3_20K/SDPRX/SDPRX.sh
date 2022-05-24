@@ -15,7 +15,6 @@ python ../../../../software/SDPRX.py --ss1 ../../../../summary_stat/EUR_EAS/${k}
 module load PLINK/1.90-beta5.3
 
 mkdir -p ../predict/SDPRX
-plink --bfile ../../../../genotype/EUR/test/test_5k --score sim_${i}_1.txt 1 2 4 header --out ../predict/SDPRX/sim_${i}_EUR
 
 plink --bfile ../../../../genotype/EAS/test/test_5k --score sim_${i}_2.txt 1 2 4 header --out ../predict/SDPRX/sim_${i}_EAS
 
