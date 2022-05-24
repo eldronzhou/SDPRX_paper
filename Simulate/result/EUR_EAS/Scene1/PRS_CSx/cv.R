@@ -18,11 +18,8 @@ r2 = rep(0, length(file))
 for (i in seq_along(file)) {
 	command = paste0("module load PLINK/1.90-beta5.3; plink --bfile ../../../../genotype/",pop,"/validate/validate_5k --score ",file[i]," 2 4 6 --out ",file[i] )
 	system(command, intern=F, wait=T)
-	dat1 = read.table(paste0(file[i],".profile"), header=T)
+	dat = read.table(paste0(file[i],".profile"), header=T)
 	
-	command = paste0("module load PLINK/1.90-beta5.3; plink --bfile ../../../../genotype/",pop,"/validate/validate_5k --score ",paste0(,file[i])," 2 4 6 --out ",file[i] )
-	system(command, intern=F, wait=T)
-
 	r2[i] = cor(pheno[,3], dat$SCORE)^2
 }
 
