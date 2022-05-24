@@ -49,6 +49,7 @@ cd ldpred2/; sbatch --array=1-10 ldpred.sh
 cd SDPRX/; sbatch --array=1-10 SDPRX.sh
 
 # XPASS
+cd XPASS/; sbatch --array=1-10 XPASS.sh
 ```
 
 # <a name="real"></a>Real data applications
