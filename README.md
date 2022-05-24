@@ -17,11 +17,8 @@ We are not able to release data used in the analysis because of the restricted a
 # <a name="sim"></a>Simulations
 ## <a name="sim-req"></a>Requirements
 * PRS-CSx 
-* Hapgen2
-* GCTA
 * LDpred2 
 * PLINK-1.90 
-* PLINK-2.0
 * R
 * about 35 Gb desk space 
 
