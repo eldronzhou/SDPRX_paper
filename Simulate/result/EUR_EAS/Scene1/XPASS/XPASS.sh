@@ -17,6 +17,4 @@ rm -f _PosteriorMean.txt
 
 mkdir -p ../predictr/XPASS
 
-plink --bfile ../../../../genotype/EUR/test/test_5k --score sim_${i}.txt 1 2 3 header --out ../predict/XPASS/sim_${i}_EUR
-
 plink --bfile ../../../../genotype/EAS/test/test_5k --score sim_${i}.txt 1 2 4 header --out ../predict/XPASS/sim_${i}_EAS
