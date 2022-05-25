@@ -34,10 +34,10 @@ We will use Scene1 as the example for demonstration. You can repeat the same pro
 ```
 cd result/EUR_EAS/Scene1
 
-# PRS-CS
-cd PRS_CS/; sbatch --array=1-22 PRS_CS.sh
+# PRS-CSx
+cd PRS_CSx/; sbatch --array=1-22 PRS_CSx.sh
 # after all jobs finish
-sbatach PRS_CS_res.sh
+sbatach PRS_CS_resx.sh
 
 # LDpred2
 cd ldpred2/; sbatch --array=1-10 ldpred.sh
@@ -53,7 +53,6 @@ cd XPASS/; sbatch --array=1-10 XPASS.sh
 
 ## <a name="real-req"></a>Requirements
 
-* same requirements as simulations except for PLINK-2.0 and GCTA
 * LDSC 
 * PopCorn
 * about 230 Gb desk space
@@ -62,11 +61,15 @@ cd XPASS/; sbatch --array=1-10 XPASS.sh
 
 **<a name="real-geno"></a>1. Obtaining Genotype data**
 
+The list of SNPs passing quality control can be found in the directory `genotype/EAS` and `genotype/AFR`. One can then obtain the genotype data if having access to UK biobank.
+
 **<a name="real-ref"></a>2. Constructing the reference LD matrix**
+
+The refernce LD of PRS-CSx and SDPRX can be obtained from their website. The `ref/` directory has the script used to construct LD matrix for LDpred2.
 
 **<a name="real-ss"></a>3. Obtaining and cleaning the summary statistics**
 
-Many GWAS consortium publishes summary statistics. However, due to the data access agreement, we are not able to directly provide the original copy. You can find the study of the summary statistics in the Table 1 of the manuscript and download the summary statistics on your own. If you need assistance, feel free to submit to the issue. Here we provide an example on downloading and processing the height summary statistics from the GIANT consortium. The procedure is similar for other traits. 
+The study of the summary statistics is listed in the Web resources section of the manuscript. If you need assistance, feel free to submit to the issue. Here we provide an example on downloading and processing the height summary statistics from the GIANT consortium. The procedure is similar for other traits. 
 
 ```
 cd UKB_real/HGT/summ_stats/
@@ -95,7 +98,7 @@ cd ../PRS_CS/; sbatch --array=1-22 PRS_CSx.sh
 sbatch PRS_CSx_res.sh
 
 # SDPRX
-cd ../SDPR/; sbatch --array=1-22 SDPR.sh
+cd ../SDPR/; sbatch --array=1-22 SDPRX.sh
 # after all jobs finish
 
 # LDpred2
