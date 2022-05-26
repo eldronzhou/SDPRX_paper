@@ -69,10 +69,10 @@ The refernce LD of PRS-CSx and SDPRX can be obtained from their website. The `re
 
 **<a name="real-ss"></a>3. Obtaining and cleaning the summary statistics**
 
-The study of the summary statistics is listed in the Web resources section of the manuscript. If you need assistance, feel free to submit to the issue. Here we provide an example on downloading and processing the height summary statistics from the GIANT consortium. The procedure is similar for other traits. 
+The studies of the summary statistics are listed in our manuscript. Here we provide an example on processing the HDL summary statistics from the GLGC consortium. The procedure is similar for other traits. 
 
 ```
-cd UKB_real/HGT/summ_stats/
+cd real/HGT/summ_stats/
 
 # download
 wget https://portals.broadinstitute.org/collaboration/giant/images/0/01/GIANT_HEIGHT_Wood_et_al_2014_publicrelease_HapMapCeuFreq.txt.gz
