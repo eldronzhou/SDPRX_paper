@@ -72,37 +72,41 @@ The refernce LD of PRS-CSx and SDPRX can be obtained from their website. The `re
 The studies of the summary statistics are listed in our manuscript. Here we provide an example on processing the HDL summary statistics from the GLGC consortium. The procedure is similar for other traits. 
 
 ```
-cd real/HGT/summ_stats/
+cd Real/HDL/summ_stats/EUR
 
-# download
-wget https://portals.broadinstitute.org/collaboration/giant/images/0/01/GIANT_HEIGHT_Wood_et_al_2014_publicrelease_HapMapCeuFreq.txt.gz
+# download EUR summary statistics
+wget http://csg.sph.umich.edu/willer/public/glgc-lipids2021/results/ancestry_specific/without_UKB_HDL_INV_EUR_HRC_1KGP3_others_ALL.meta.singlevar.results.gz
 
 # make sure you check the name of summary statistics is right
 # you also need to change the path of LDSC, munge_summstats.py, and reference of LDSC
+Rscript clean1.R
+
+# download EAS summary statistics
+cd ../EAS/
+wget http://csg.sph.umich.edu/willer/public/glgc-lipids2021/results/ancestry_specific/HDL_INV_EAS_1KGP3_ALL.meta.singlevar.results.gz
 Rscript clean1.R
 ```
 
 **<a name="real-analysis"></a>4. Running the analysis**
 
-Here is the example on running analysis for height. The procedure is similar for other traits. 
+Here is the example on running analysis for HDL. The procedure is similar for other traits. 
 
 ```
 cd UKB_real/HGT/result/
-
-# XPASS
-cd XPASS/; sbatch XPASS.sh
 
 # PRS-CSX
 cd ../PRS_CS/; sbatch --array=1-22 PRS_CSx.sh
 # after all jobs finish
 sbatch PRS_CSx_res.sh
 
-# SDPRX
-cd ../SDPR/; sbatch --array=1-22 SDPRX.sh
-# after all jobs finish
-
 # LDpred2
 cd ../ldpred2/; sbatch ldpred2.sh
+
+# SDPRX
+cd ../SDPR2/; sbatch --array=1-22 SDPRX.sh
+
+# XPASS
+cd XPASS/; sbatch XPASS.sh
 ```
 
  
