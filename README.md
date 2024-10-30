@@ -25,7 +25,7 @@ We are not able to release data used in the analysis because of the restricted a
 ## Workflow
 **<a name="sim-geno"></a>1. Obtaining Genotype data**
 
-You can download the effect sizes, genotype, phenotype, and summary statistics used in this simulation from [this link](https://drive.google.com/drive/folders/1MjLUdIxfneM3-Oh-5LX-AG9MzQ3PkrHL?usp=sharing).
+You can download the effect sizes, genotype, phenotype, and summary statistics used in this simulation from ~~[this link](https://drive.google.com/drive/folders/1MjLUdIxfneM3-Oh-5LX-AG9MzQ3PkrHL?usp=sharing)~~. Update: 11/30/2024. The link to the google drive will no longer work due to the expiration of my google drive storage. If you are interested in obtaining the data, please send me an email at zhou1633(at)purdue.edu.
 
 **<a name="sim-analysis"></a>2. Running the analysis**
 
