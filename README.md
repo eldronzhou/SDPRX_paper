@@ -29,7 +29,7 @@ You can download the effect sizes, genotype, phenotype, and summary statistics u
 
 **<a name="sim-analysis"></a>2. Running the analysis**
 
-We will use Scene1 as the example for demonstration. You can repeat the same procedure for other Scenes.
+We will use Scene1 as the example for demonstration. You can repeat the same procedure for other Scenes. Note that the version of SDPRX used in the simulation is slightly differernt the public version with respect to the format of summary statistics and reference LD panel. 
 
 ```
 cd result/EUR_EAS/Scene1
